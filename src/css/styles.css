@@ -15,8 +15,20 @@ body {
 #search-box {
   font: inherit;
   padding: 8px;
-  max-width: 320px;
-  margin-bottom: 16px;
+  width: 320px;
+  margin-left: 40px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.country-list--big {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 16px 0;
 }
 
 .country-item {
@@ -26,19 +38,14 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 20px;
 }
 
 .country-info {
   padding-left: 40px;
-    font-size: 20px;
-      font-weight: bold
-}
-.country-info span{
-  font-weight: 400 ;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.country-item span {
-  font-size: 40px;
-  font-weight: bold;
+.country-info span {
+  font-weight: 400;
 }

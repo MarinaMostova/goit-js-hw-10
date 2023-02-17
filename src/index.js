@@ -23,13 +23,13 @@ function onInputChange(e) {
           ? Notiflix.Notify.info(
               'Too many matches found. Please enter a more specific name.'
             )
-          : onRenderCountryCard(countries);
+          : onRenderCountryList(countries);
       })
       .catch(onFetchError);
   }
 }
 
-function onRenderCountryCard(countries) {
+function onRenderCountryList(countries) {
   dataCleaning();
   const markup = countries
     .map(
@@ -39,15 +39,15 @@ function onRenderCountryCard(countries) {
      </li>`
     )
     .join('');
-  countryList.insertAdjacentHTML('beforeend', markup);
+  countryList.innerHTML = markup;
 
   if (countries.length === 1) {
     countryList.classList.add('country-list--big');
-    makeCountryCard(countries);
+    createCountryCard(countries);
   }
 }
 
-function makeCountryCard(countries) {
+function createCountryCard(countries) {
   const country = countries[0];
   countryCard.innerHTML = ` <p>Capital:<span> ${country.capital}</span></p> 
   <p>Population:<span> ${country.population}</span></p>
@@ -55,6 +55,7 @@ function makeCountryCard(countries) {
 }
 
 function onFetchError(error) {
+  dataCleaning();
   Notiflix.Notify.failure('Oops, there is no country with that name');
 }
 

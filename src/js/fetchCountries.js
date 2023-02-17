@@ -5,6 +5,5 @@ export const fetchCountries = name => {
     if (response.ok) {
       return response.json();
     }
-    throw new Error(response.status);
   });
 };

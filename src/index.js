@@ -34,7 +34,7 @@ function onRenderCountryList(countries) {
   const markup = countries
     .map(
       country => `<li class ="country-item">
-       <img src="${country.flags.svg}" alt="${country.name.oficial}" width = "40px">
+       <img src="${country.flags.svg}" alt="${country.name.oficial}" width = "40px" heignt = "40px">
        </img> <span> ${country.name.official} </span>
      </li>`
     )
